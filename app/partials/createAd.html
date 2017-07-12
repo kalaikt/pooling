@@ -1,0 +1,149 @@
+﻿<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h4>Create Ad</h4></div>
+    <div class="panel-body">
+      <form class="form-horizontal" role="form">
+        <div id="pickup-details">
+          <legend>Pickup Details</legend>
+          <div class="form-group pull-left move-down">
+            <label for="startPlace" class="col-sm-3 control-label">Pickup</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" data-ng-model="ad.pickup_place" id="startPlace" ng-autocomplete="result" details="details" options="options" placeholder="Pickup place">
+            </div>
+          </div>
+          <div class="form-group pull-left">
+            <label for="endPlace" class="col-sm-3 control-label">Drop</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" data-ng-model="ad.drop_place" id="endPlace" placeholder="Drop place" ng-autocomplete="result" details="details" options="options">
+            </div>
+          </div>
+          <div class="form-group pull-left">
+            <label for="picktime" class="col-sm-3 control-label">Pick Time</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" data-ng-model="ad.pickup_time" id="picktime" placeholder="Pick Time">
+            </div>
+          </div>
+          <div class="form-group pull-left">
+            <label for="noofseats" class="col-sm-3 control-label">No. of Seat(s)</label>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" data-ng-model="ad.no_of_seats" id="noofseats" placeholder="No. of seats available">
+            </div>
+          </div>
+          <div class="form-group pull-left">
+            <label for="priceperseat" class="col-sm-3 control-label">Spare</label>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" data-ng-model="ad.amount_per_seat" id="priceperseat" placeholder="Spare per seat">
+            </div>
+          </div>
+          <div class="form-group pull-left">
+            <label class="col-sm-3 control-label">Gender <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip" title="Gender you will accept to travel"></i></label>
+            <div class="col-sm-9">
+              <div class="radio pull-left marginr10">
+                <label>
+                <input type="radio" name="gender" data-ng-model="ad.gender" id="optionsRadios1" value="1" checked="">
+                <span>Male</span> </label>
+              </div>
+              <div class="radio pull-left marginr10">
+                <label>
+                <input type="radio" name="gender" data-ng-model="ad.gender" id="optionsRadios2" value="2">
+                <span>Female</span> </label>
+              </div>
+              <div class="radio pull-left">
+                <label>
+                <input type="radio" name="gender" data-ng-model="ad.gender" id="optionsRadios2" value="3">
+                <span>Any</span> </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group pull-left">
+            <label class="col-sm-3 control-label">Vehicle</label>
+            <div class="col-sm-9">
+              <div class="radio pull-left marginr10">
+                <label>
+                <input type="radio" name="vehicle" data-ng-model="ad.vehicle" id="optionsRadios1" value="bike" checked="">
+                <span>Bike</span> </label>
+              </div>
+              <div class="radio pull-left">
+                <label>
+                <input type="radio" name="vehicle" data-ng-model="ad.vehicle" id="optionsRadios2" value="car">
+                <span>Car</span> </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group pull-left">
+            <label for="vehicleno" class="col-sm-3 control-label">Vehicle No</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" data-ng-model="ad.vehicle_no" id="vehicleno" placeholder="Vehicle No">
+            </div>
+          </div>
+          <div class="clearfix"><button type="button" class="pull-right btn btn-primary" data-ng-disabled="!ad.pickup_place || !ad.drop_place" data-ng-click="next()">Next</button></div>
+        </div>
+        <div id="personal-details" style="display:none;">
+          <legend>Personal Details</legend>
+          <div class="form-group">
+            <label for="fistname" class="col-sm-3 control-label">Fist Name</label>
+            <div class="col-sm-9">
+              <input type="text" data-ng-model="user.firstname" class="form-control" id="fistname" placeholder="First Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastname" class="col-sm-3 control-label">Last Name</label>
+            <div class="col-sm-9">
+              <input type="text" data-ng-model="user.lastname" class="form-control" id="lastname" placeholder="Last Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Gender</label>
+            <div class="col-sm-9">
+              <div class="radio pull-left marginr10">
+                <label>
+                <input type="radio" name="gender" data-ng-model="user.gender" id="optionsRadios1" value="1" checked="">
+                <span>Male</span> </label>
+              </div>
+              <div class="radio pull-left">
+                <label>
+                <input type="radio" name="gender" data-ng-model="user.gender" id="optionsRadios2" value="2">
+                <span>Female</span> </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phoneno" class="col-sm-3 control-label">Mobile No</label>
+            <div class="col-sm-9">
+              <input type="text" data-ng-model="user.phone_no" class="form-control" id="phoneno" placeholder="Mobile No">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-9">
+              <input type="email" data-ng-model="user.email" class="form-control" id="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-9">
+              <input type="password" data-ng-model="user.password" class="form-control" id="password" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Address" class="col-sm-3 control-label">Address</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" data-ng-model="user.address" id="Address" placeholder="Address">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Address" class="col-sm-3 control-label"></label>
+            <div class="col-sm-9">
+              <div class="checkbox">
+                <label>
+                <input type="checkbox" name="agree" id="optionsCheckbox1" value="1">
+                I have read and agree to the Terms & Conditions. </label>
+              </div>
+            </div>
+          </div>
+          <div class="pull-right clearfix"><button type="button" class="btn btn-default marginr10" data-ng-click="previous()">Previous</button><button type="button" class="btn btn-primary" data-ng-disabled="!user.email || !user.password" data-ng-click="createAd()">Create</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

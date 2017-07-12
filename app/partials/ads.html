@@ -1,0 +1,18 @@
+﻿<div class="row">
+  <div class="list-group"> <a class="list-group-item" data-ng-repeat="ad in ads | filter:searchText" href="#detail/{{ad.id}}"> <span class="pull-left btn btn-lg btn-default marginr10"><i class="glyphicon glyphicon-user"></i></span> <span class="pull-left">
+    <h5 class="list-group-item-heading bold">{{ad.title}} 
+    	<span ng-switch on="ad.today"> 
+        	<span ng-switch-when="Today"><mark>Today</mark></span> 
+            <span ng-switch-default>{{ad.today}}</span> 
+        </span> 
+    </h5>
+    <p class="list-group-item-text" ng-if="ad.description">{{ad.description}}</p>
+    <p class="list-group-item-text">
+    	<span class="marginr10"><label class="bold">Start at:</label> {{ad.start_time}}</span> 
+        <span class="marginr10"><label class="bold">Amount:</label> &#8377;{{ad.amount_per_seat}}/Seat</span> 
+        <span class="marginr10"><label class="bold">Gender:</label> {{ad.gender}}</span>
+        <span><label class="bold">Available Seat(s):</label> {{ad.no_of_seats}}</span>
+    </p>
+    
+    </span> </a> </div>
+</div>

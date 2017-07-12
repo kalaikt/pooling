@@ -1,0 +1,23 @@
+﻿<div class="customers view">
+  <div class="container">
+    <header>
+      <h3>Sign In</h3>
+    </header>
+    <div class="alert alert-danger alert-error" data-ng-hide="hide"> <strong>Error!</strong> {{error_message}} </div>
+    <div class="row">
+      <div class="span3"> Email: <br />
+        <input data-ng-model="user.email" type="email" placeholder="Email" required>
+      </div>
+      <div class="span3"> Password: <br />
+        <input data-ng-model="user.password" type="password" placeholder="Password" required>
+      </div>
+      <div class="span3"> <br />
+        <button id="submitCustomer" class="btn btn-primary" type="button" 
+                    data-ng-disabled="!user.email || !user.password" 
+                    data-ng-click="login()">Sign in</button>
+      </div>
+    </div>
+    <br />
+    <div><a href="#/register">Forgot Password</a> | <a href="#/register">Register</a></div>
+  </div>
+</div>
